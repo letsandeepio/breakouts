@@ -1,12 +1,10 @@
-Problem Solving and Learning to Learn
-
-Questions:
+# Problem Solving and Learning to Learn
 
 > "First, solve the problem. Then write the code." - John Johnson
 
 > "Programming isn't about what you know. It's about what you can figure out." - Chris Pine
 
-31 May 2023
+31 May 2023 - Agenda
 
 - [x] - Introduction
 - [x] - Understanding the problem
