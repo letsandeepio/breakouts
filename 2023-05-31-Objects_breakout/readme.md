@@ -16,3 +16,4 @@ MDN Docs (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_
 - [x] Accessing Object Properties - using dot notation - bracket notation
 - [x] Object methods
 - [x] Breakout Coding Challenge
+      (see requirements.md);
