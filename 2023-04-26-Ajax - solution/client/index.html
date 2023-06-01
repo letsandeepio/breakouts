@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Todo App</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Get todos on page load
+        $.get("http://localhost:3000/todos", function (data) {
+          // Loop through todos and append to list
+          for (var i = 0; i < data.length; i++) {
+            $("<li>").text(data[i]).appendTo("#todos");
+          }
+        });
+
+        // this form submission to add new todo
+        $("#add-todo-form").submit(function (event) {
+          event.preventDefault(); // prevent default form submission
+          var newTodo = $("#todo-title").val();
+          $.post(
+            "http://localhost:3000/todos",
+            { data: newTodo },
+            function (data) {
+              // Append new todo to list
+              $("<li>").text(data).appendTo("#todos");
+              // Clear form input
+              $("#todo-title").val("");
+            }
+          );
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Todo App</h1>
+    <ul id="todos"></ul>
+    <h2>Add Todo</h2>
+    <form id="add-todo-form">
+      <input type="text" id="todo-title" placeholder="Todo title" />
+      <button type="submit">Add Todo</button>
+    </form>
+  </body>
+</html>

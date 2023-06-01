@@ -1,0 +1,31 @@
+/* .border {
+  border: solid 1px black;
+  padding: 5px;
+} */
+
+.shop-container {
+  display: flex;
+}
+
+.right-side-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link-container {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-link-container li {
+  padding: 5px;
+}
+
+.center-container {
+  flex-grow: 1;
+}

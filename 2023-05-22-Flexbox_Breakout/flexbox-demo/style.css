@@ -1,0 +1,31 @@
+.box {
+  flex: 1;
+  min-height: 150px;
+  font-size: 40px;
+  margin: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.green {
+  background-color: green;
+  flex: 0 1 30%;
+}
+
+.red {
+  background-color: red;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.container {
+  display: flex;
+}
+
+.container-child {
+  flex: 0 1 0%;
+}
