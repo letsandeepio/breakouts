@@ -1,7 +1,11 @@
 import { BellIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import Button from "../UI/Button";
+import Profile from "./Profile";
+import { useContextValue } from "../context/StateProvider";
 
 const Toolbar = () => {
+  const { userLoggedIn, logIn } = useContextValue();
+
   return (
     <div className='flex flex-1 gap-x-4 self-stretch lg:gap-x-6'>
       <form className='relative flex flex-1' action='#' method='GET'>
@@ -34,9 +38,8 @@ const Toolbar = () => {
           className='hidden lg:block lg:h-6 lg:w-px lg:bg-gray-900/10'
           aria-hidden='true'
         />
-        <Button label='Login' />
 
-        {/* {loggedIn ? <Profile /> : <Button label='Login' onClick={logInUser} />} */}
+        {userLoggedIn ? <Profile /> : <Button label='Login' onClick={logIn} />}
       </div>
     </div>
   );

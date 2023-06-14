@@ -2,6 +2,7 @@ import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { Fragment } from "react";
 import { classNames } from "../../utils/utilities";
+import { useContextValue } from "../context/StateProvider";
 
 const userNavigation = [
   { name: "Your profile", href: "#" },
@@ -9,6 +10,7 @@ const userNavigation = [
 ];
 
 const Profile = () => {
+  const { logOut } = useContextValue();
   return (
     <>
       {/* Profile dropdown */}
@@ -50,6 +52,7 @@ const Profile = () => {
                     href={item.href}
                     onClick={(e) => {
                       e.preventDefault();
+                      logOut();
                     }}
                     className={classNames(
                       active ? "bg-gray-50" : "",

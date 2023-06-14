@@ -2,6 +2,7 @@ import { Bars3Icon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import Navigation from "./components/Navigation";
 import Toolbar from "./components/Toolbar/Toolbar";
+import Dashboard from "./components/Pages/Dashboard";
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -28,7 +29,9 @@ function App() {
             />
             <Toolbar />
           </div>
-          <main className='py-10'>Welcome to the app</main>
+          <main className='py-10'>
+            <Dashboard />
+          </main>
         </div>
       </div>
     </>

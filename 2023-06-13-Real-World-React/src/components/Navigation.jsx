@@ -11,6 +11,8 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Fragment } from "react";
+import TeamsContainer from "./TeamsContainer";
+import { useContextValue } from "./context/StateProvider";
 
 const navigation = [
   { name: "Dashboard", href: "/", icon: HomeIcon, current: true },
@@ -26,6 +28,8 @@ function classNames(...classes) {
 }
 
 const Navigation = ({ sidebarOpen, setSidebarOpen }) => {
+  const { userLoggedIn } = useContextValue();
+
   return (
     <>
       <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -171,7 +175,8 @@ const Navigation = ({ sidebarOpen, setSidebarOpen }) => {
                   ))}
                 </ul>
               </li>
-              {/* <TeamsContainer /> */}
+              {userLoggedIn && <TeamsContainer />}
+
               <li className='mt-auto'>
                 <a
                   href='#'

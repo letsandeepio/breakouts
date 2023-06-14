@@ -10,7 +10,7 @@ Prop drilling is a technique used in React applications where data is passed dow
 2. Coupling: Prop drilling creates tight coupling between components, as each component needs to be aware of the props it receives and passes down.
 3. Performance: Prop drilling can lead to unnecessary re-rendering of components.
 
-### Alternatives to Prop Drilling
+### Alternatives to Prop Drilling / State Management Solutions
 
 1. React Context: React Context allows you to define a global state that can be accessed by any component in the component tree without the need for prop drilling. It provides a more centralized and efficient way to share data.
 2. Redux: Redux is a popular state management library for React applications. It provides a global state that can be accessed by any component, eliminating the need for prop drilling. Redux also offers additional features like middleware and time-travel debugging.
