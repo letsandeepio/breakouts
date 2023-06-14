@@ -13,6 +13,7 @@ import {
 import { Fragment } from "react";
 import TeamsContainer from "./TeamsContainer";
 import { useContextValue } from "./context/StateProvider";
+import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Dashboard", href: "/", icon: HomeIcon, current: true },
@@ -156,8 +157,9 @@ const Navigation = ({ sidebarOpen, setSidebarOpen }) => {
                 <ul role='list' className='-mx-2 space-y-1'>
                   {navigation.map((item) => (
                     <li key={item.name}>
+                      {/* Use Link tage or anchor tag*/}
                       <a
-                        href='#'
+                        href={item.href}
                         className={classNames(
                           item.current
                             ? "bg-gray-800 text-white"

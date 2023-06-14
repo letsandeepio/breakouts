@@ -3,6 +3,39 @@ import { useState } from "react";
 import Navigation from "./components/Navigation";
 import Toolbar from "./components/Toolbar/Toolbar";
 import Dashboard from "./components/Pages/Dashboard";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import ErrorPage from "./components/Pages/ErrorPage";
+import Team from "./components/Pages/Team";
+import Projects from "./components/Pages/Projects";
+import TeamMember from "./components/Pages/TeamMember";
+
+// route '/' ---> root route
+// conditionally render a component called Dashboard
+
+// route '/team'
+// conditionally render a component called Team
+
+// and so on
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Dashboard />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/team",
+    element: <Team />,
+  },
+  {
+    path: "/projects",
+    element: <Projects />,
+  },
+  {
+    path: "team/:teamId",
+    element: <TeamMember />,
+  },
+]);
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -30,7 +63,8 @@ function App() {
             <Toolbar />
           </div>
           <main className='py-10'>
-            <Dashboard />
+            {/** Slot to Conditionally render components here */}
+            <RouterProvider router={router} />
           </main>
         </div>
       </div>
